@@ -3,18 +3,18 @@
 
 import datetime
 
-from technician import Technician
+from gefitech.models.technician import Technician
 
 class Band:
     """ Create a Band's Object"""
 
     def __init__(self, band_infos):
         self.name = band_infos['name']
-        self.rider_date = datetime.datetime(band_infos['rider_date']['year'], 
-                                            band_infos['rider_date']['month'], 
-                                            band_infos['rider_date']['day'])
-        self.foh_technician = Technician(band_infos['foh_technician'])
-        self.monitor_technician = Technician(band_infos['monitor_technician'])
+        self.rider_date = [band_infos['rider_date']['year'],
+                            band_infos['rider_date']['month'],
+                            band_infos['rider_date']['day']]
+        self.foh_technician = band_infos['foh_technician']
+        self.monitor_technician = band_infos['monitor_technician']
         self.patch = band_infos['patch']
 
     def __repr__(self):
@@ -26,14 +26,16 @@ class Band:
     def modify_name(self, new_name):
         self.name = new_name
 
-    def modify_rider_date(self, new__rider_date):
+    def modify_rider_date(self, new_rider_date):
         self.rider_date = new_rider_date
 
-    def modify_foh_technician(self, new_foh_technician):
-        self.foh_technician = new_foh_technician
-
-    def modify_monitor_technician(self, new_monitor_technician):
-        self.monitor_technician = new_monitor_technician
+    def modify_technician(self, role, new_technician):
+        if role == "foh":
+            self.foh_technician = new_technician
+        elif role == "monitor":
+            self.monitor_technician = new_technician
+        else:
+            pass
 
     def count_items(self, item):
         count_list={}
@@ -44,3 +46,8 @@ class Band:
                 count_list[source[item]] = 1
         return count_list
 
+    def count_all(self):
+        full_item = {}
+        full.item['sources'] = self.count_items('source')
+        full.item['stand'] = self.count_items('stand')
+        return full_item

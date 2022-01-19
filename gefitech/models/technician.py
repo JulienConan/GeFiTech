@@ -24,3 +24,8 @@ class Technician:
     def serialize(self):
         tech_serialize = [self.firstname, self.surname]
         return tech_serialize
+
+    def __eq__(self, other):
+        if isinstance(other, Technician):
+            return (self.firstname == other.firstname and self.surname == other.surname)
+        return False
