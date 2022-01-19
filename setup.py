@@ -1,6 +1,6 @@
 from distutils.core import setup
 setup(
-name = "gtfitech",
+name = "gefitech",
 version = "0.1",
 author = "Julien",
 packages = ["gefitech"],
