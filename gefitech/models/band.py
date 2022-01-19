@@ -10,8 +10,8 @@ class Band:
 
     def __init__(self, band_infos):
         self.name = band_infos['name']
-        self.rider_date = datetime.datetime(band_infos['rider_date']['year'],
-                                            band_infos['rider_date']['month'],
+        self.rider_date = datetime.datetime(band_infos['rider_date']['year'], 
+                                            band_infos['rider_date']['month'], 
                                             band_infos['rider_date']['day'])
         self.foh_technician = Technician(band_infos['foh_technician'])
         self.monitor_technician = Technician(band_infos['monitor_technician'])
@@ -43,3 +43,4 @@ class Band:
             else:
                 count_list[source[item]] = 1
         return count_list
+
