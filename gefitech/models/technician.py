@@ -22,5 +22,5 @@ class Technician:
         self.surname = new_surname
 
     def serialize(self):
-        tech_serialize = [self.fisrtname, self.surname]
+        tech_serialize = [self.firstname, self.surname]
         return tech_serialize
