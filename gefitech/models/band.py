@@ -3,7 +3,6 @@
 
 import datetime
 
-from gefitech.models.technician import Technician
 
 class Band:
     """ Create a Band's Object"""
@@ -48,6 +47,6 @@ class Band:
 
     def count_all(self):
         full_item = {}
-        full.item['sources'] = self.count_items('source')
-        full.item['stand'] = self.count_items('stand')
+        full_item["references"] = self.count_items('reference')
+        full_item['stand'] = self.count_items('stand')
         return full_item
