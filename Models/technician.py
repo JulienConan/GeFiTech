@@ -5,10 +5,9 @@
 class Technician:
     """ Create a Technician's Object"""
 
-    def __init__(self, tech):
-        self.firstname = tech['firstname']
-        self.surname = tech['surname']
-        self.role = tech['role']
+    def __init__(self, tech=[]):
+        self.firstname = tech[0]
+        self.surname = tech[1]
 
     def __repr__(self):
         return self.firstname + " " + self.surname
@@ -22,8 +21,6 @@ class Technician:
     def modify_surname(self, new_surname):
         self.surname = new_surname
 
-    def modify_role(self, new_role):
-        self.role = new_role
-
-
-
+    def serialize(self):
+        tech_serialize = [self.fisrtname, self.surname]
+        return tech_serialize
