@@ -29,3 +29,4 @@ class Technician:
         if isinstance(other, Technician):
             return (self.firstname == other.firstname and self.surname == other.surname)
         return False
+        """""""
