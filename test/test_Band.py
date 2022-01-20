@@ -1,9 +1,8 @@
-import json
 import datetime
 
 from gefitech.models.band import Band
 
-from datas.datas_test import base_band
+from .datas.datas_test import base_band
 
 def test_create_band():
     band = Band(base_band)
