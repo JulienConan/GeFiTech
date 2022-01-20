@@ -16,14 +16,8 @@ class Day:
     def __str__(self):
         return repr(self)
 
-    def modify_date(self, date):
-        self.date = [date]
-
     def add_band(self, band):
         self.band_list.append(Band(band))
 
     def remove_Band(self, band):
-        
-        
-
-
+        pass

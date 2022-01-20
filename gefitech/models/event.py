@@ -34,3 +34,4 @@ class Event:
         return
 
     def serialyse(self):
+        pass
